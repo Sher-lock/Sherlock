@@ -3,10 +3,13 @@
 
 #include <QMainWindow>
 #include <QObject>
-#include <QTcpSocket>
-#include <QTcpServer>
 #include <QDebug>
-#include <QBuffer>
+#include <QJsonObject>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QScriptEngine>
+#include <QThread>
 
 namespace Ui {
 class MainWindow;
@@ -19,22 +22,21 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-   // void Connect();
+    void service();
 
 signals:
 
 public slots:
 
 private slots:
-    void addConnection();
-    void processMessage();
     void on_btnSend_clicked();
+    void onResult(QNetworkReply*);
 
 private:
     Ui::MainWindow *ui;
-    QTcpSocket *socket;
-    QTcpServer *server;
-    QBuffer *buffer;
+    QNetworkRequest request;
+    QNetworkAccessManager netmanager;
+    QNetworkReply *currentReply;
 
 };
 

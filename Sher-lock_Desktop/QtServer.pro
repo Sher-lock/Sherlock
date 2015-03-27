@@ -7,6 +7,8 @@
 QT       += core gui
 QT       += network
 QT       += websockets
+QT       += script
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QtServer

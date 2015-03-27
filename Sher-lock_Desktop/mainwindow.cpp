@@ -5,20 +5,13 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-    socket=new QTcpSocket(this);
-    server=new QTcpServer(this);
-    connect(server,SIGNAL(newConnection()),this,SLOT(addConnection()));
-    if(!server->listen(QHostAddress::Any,1234))
-        ui->txtmsg->setText("Could not start");
-    else
-    {
-        ui->txtmsg->setText("Server started");
-        //connect(websocketserver,SIGNAL(newConnection()),this,SLOT(newConnection()));
-    }
-
+       ui->setupUi(this);
+       QUrl url("http://rishikesh.byethost5.com//get.php");
+       request.setUrl(url);
+       currentReply = netmanager.get(request);
+       connect(&netmanager,SIGNAL(finished(QNetworkReply*)),this,SLOT(onResult(QNetworkReply*)));
+       //service();
 }
-
 
 MainWindow::~MainWindow()
 {
@@ -26,31 +19,28 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow :: addConnection()
+void MainWindow::onResult(QNetworkReply* reply)
 {
-    QBuffer* buffer = new QBuffer(this);
-    buffer->open(QIODevice::ReadWrite);
-
-    socket=server->nextPendingConnection();
-    connect(socket, SIGNAL(readyRead()),SLOT(processMessage()));
-    ui->txtmsg->setText("Done");
+       QString data=(QString)reply->readLine();
+       QString str = ui->txtchat->toPlainText();
+        if(data=="shutdown")
+            system("vlc");
+       if(!(data==""))
+           ui->txtchat->setPlainText(str+"\nRemote : "+data);
 
 }
 
-
-void MainWindow::processMessage()
+void MainWindow::service()
 {
-    QByteArray ba = socket->readLine();
-    QString str=ui->txtchat->toPlainText();
-    ui->txtchat->setPlainText(str+"\nRemote : "+ba);
+
 }
+
 
 void MainWindow::on_btnSend_clicked()
 {
-    QString str=ui->txtmsg->toPlainText();
-    //QByteArray ba=str;
-    socket->write("Test");
-   // ui->txtchat->setPlainText("\nDesktop : "+str);
-    ui->txtmsg->setText("");
+    QUrl url("http://rishikesh.byethost5.com//get.php");
+    request.setUrl(url);
+    currentReply = netmanager.get(request);
+    connect(&netmanager,SIGNAL(finished(QNetworkReply*)),this,SLOT(onResult(QNetworkReply*)));
 
 }

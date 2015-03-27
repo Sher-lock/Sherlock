@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Sher-Lock Desktop</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTextEdit" name="txtmsg">
@@ -44,7 +44,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Send</string>
+     <string>Refresh</string>
     </property>
    </widget>
   </widget>
