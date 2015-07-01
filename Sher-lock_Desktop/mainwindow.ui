@@ -29,12 +29,12 @@
      <rect>
       <x>20</x>
       <y>50</y>
-      <width>361</width>
+      <width>261</width>
       <height>191</height>
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSend">
+   <widget class="QPushButton" name="btnRefresh">
     <property name="geometry">
      <rect>
       <x>296</x>
@@ -45,6 +45,19 @@
     </property>
     <property name="text">
      <string>Refresh</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSend_2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>50</y>
+      <width>81</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send</string>
     </property>
    </widget>
   </widget>

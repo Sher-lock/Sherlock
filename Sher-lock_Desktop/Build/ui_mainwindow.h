@@ -1,0 +1,91 @@
+/********************************************************************************
+** Form generated from reading UI file 'mainwindow.ui'
+**
+** Created by: Qt User Interface Compiler version 5.4.0
+**
+** WARNING! All changes made in this file will be lost when recompiling UI file!
+********************************************************************************/
+
+#ifndef UI_MAINWINDOW_H
+#define UI_MAINWINDOW_H
+
+#include <QtCore/QVariant>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QToolBar>
+#include <QtWidgets/QWidget>
+
+QT_BEGIN_NAMESPACE
+
+class Ui_MainWindow
+{
+public:
+    QWidget *centralWidget;
+    QTextEdit *txtmsg;
+    QPlainTextEdit *txtchat;
+    QPushButton *btnRefresh;
+    QPushButton *btnSend_2;
+    QMenuBar *menuBar;
+    QToolBar *mainToolBar;
+    QStatusBar *statusBar;
+
+    void setupUi(QMainWindow *MainWindow)
+    {
+        if (MainWindow->objectName().isEmpty())
+            MainWindow->setObjectName(QStringLiteral("MainWindow"));
+        MainWindow->resize(400, 300);
+        centralWidget = new QWidget(MainWindow);
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        txtmsg = new QTextEdit(centralWidget);
+        txtmsg->setObjectName(QStringLiteral("txtmsg"));
+        txtmsg->setGeometry(QRect(20, 10, 261, 31));
+        txtchat = new QPlainTextEdit(centralWidget);
+        txtchat->setObjectName(QStringLiteral("txtchat"));
+        txtchat->setGeometry(QRect(20, 50, 261, 191));
+        btnRefresh = new QPushButton(centralWidget);
+        btnRefresh->setObjectName(QStringLiteral("btnRefresh"));
+        btnRefresh->setGeometry(QRect(296, 10, 81, 26));
+        btnSend_2 = new QPushButton(centralWidget);
+        btnSend_2->setObjectName(QStringLiteral("btnSend_2"));
+        btnSend_2->setGeometry(QRect(300, 50, 81, 26));
+        MainWindow->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(MainWindow);
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 400, 25));
+        MainWindow->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(MainWindow);
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
+        statusBar = new QStatusBar(MainWindow);
+        statusBar->setObjectName(QStringLiteral("statusBar"));
+        MainWindow->setStatusBar(statusBar);
+
+        retranslateUi(MainWindow);
+
+        QMetaObject::connectSlotsByName(MainWindow);
+    } // setupUi
+
+    void retranslateUi(QMainWindow *MainWindow)
+    {
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Sher-Lock Desktop", 0));
+        btnRefresh->setText(QApplication::translate("MainWindow", "Refresh", 0));
+        btnSend_2->setText(QApplication::translate("MainWindow", "Send", 0));
+    } // retranslateUi
+
+};
+
+namespace Ui {
+    class MainWindow: public Ui_MainWindow {};
+} // namespace Ui
+
+QT_END_NAMESPACE
+
+#endif // UI_MAINWINDOW_H
