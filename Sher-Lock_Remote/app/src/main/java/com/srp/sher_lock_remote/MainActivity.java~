@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
     String resp, resp1;
     Integer flag;
     EditText getcommand;
-    protected static String url = "http://sherlock.hostei.com/putinfile.php";
+    protected static String url = "http://rishikesh.byethost5.com//error.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
