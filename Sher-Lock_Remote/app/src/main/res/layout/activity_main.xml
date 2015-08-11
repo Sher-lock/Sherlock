@@ -51,7 +51,47 @@
         android:layout_height="wrap_content"
         android:text="screenshot"
         android:id="@+id/screenshot"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/shutdown"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="161dp" />
+        android:layout_marginTop="52dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="enter the custom command"
+        android:id="@+id/textView"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/screenshot"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:hint="enter the custom command"
+        android:id="@+id/customc"
+        android:layout_below="@+id/textView"
+        android:layout_alignRight="@+id/screenshot"
+        android:layout_alignEnd="@+id/screenshot"
+        android:layout_marginTop="43dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="command"
+        android:id="@+id/command"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/screenshot"
+        android:layout_alignEnd="@+id/screenshot" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capture user"
+        android:id="@+id/capture"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
