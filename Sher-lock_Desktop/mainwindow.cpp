@@ -61,23 +61,17 @@ void MainWindow::onreceive()
 void MainWindow::sendmail()
 {
     SmtpClient smtp("smtp.gmail.com", 465, SmtpClient::SslConnection);
-    smtp.setUser("prasad.ghangal@gmail.com");
-    smtp.setPassword("SWORDFISH121349");
+    smtp.setUser("sherlock221b.supp@gmail.com");
+    smtp.setPassword("support@sherlock");
     MimeMessage message;
-    message.setSender(new EmailAddress("prasad.ghangal@gmail.com", "Sher-Lock_Desktop"));
-    message.addRecipient(new EmailAddress("prasad.ghangal@gmail.com", "SRP Remote"));
+    message.setSender(new EmailAddress("sherlock221b.supp@gmail.com", "Sher-Lock_Desktop"));
+    message.addRecipient(new EmailAddress("sherlock221b.supp@gmail.com", "SRP Remote"));
     message.setSubject("Sher-Lock Support");
     MimeText text;
    text.setText("Hi!\n Find the requested attachment");
    message.addPart(&text);
 
-//   QProcess process;
-//   process.start("ls -t | cut -c1-39 |head -1");
-//   process.waitForFinished(-1); // will wait forever until finished
 
-//   QString stdout = process.readAllStandardOutput();
-//   qDebug()<<stdout;
-   // Now we create the attachment object
    MimeAttachment attachment (new QFile(image));
 
    // the file type can be setted. (by default is application/octet-stream)
